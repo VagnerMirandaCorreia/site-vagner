@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vagner Miranda Correia | Advocacia — OAB/PR 80.678</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold: #C5A059;
+    --gold-deep: #A9843F;
+    --emerald: #1A3626;
+    --emerald-soft: #2A4E3A;
+    --paper: #F4F1EA;
+    --wood: #3E2723;
+    --ink: #241C18;
+    --ink-soft: #5B564F;
+    --line: rgba(36,28,24,0.14);
+    --ruby: #9B1B30;
+    --ruby-deep: #7A1425;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Montserrat', sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:'Playfair Display', serif; font-weight:600; color:var(--emerald); }
+  a{ color:inherit; text-decoration:none; }
+  .eyebrow{
+    font-family:'Montserrat', sans-serif;
+    font-size:0.72rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    font-weight:700;
+    display:inline-block;
+    margin-bottom:14px;
+  }
+  .wrap{ max-width:1140px; margin:0 auto; padding:0 32px; }
+
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,241,234,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 32px; max-width:1140px; margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:14px; }
+  .brand img{ width:68px; height:68px; border-radius:12px; object-fit:cover; box-shadow:0 2px 8px rgba(26,54,38,0.18); }
+  .brand-text{ font-family:'Playfair Display', serif; font-weight:600; font-size:1.15rem; color:var(--emerald); line-height:1.15; }
+  .brand-text small{ display:block; font-family:'Montserrat',sans-serif; font-size:0.66rem; letter-spacing:0.12em; color:var(--gold-deep); font-weight:700; margin-top:3px; }
+  .nav-links{ display:flex; gap:30px; font-size:0.9rem; font-weight:600; color:var(--emerald); }
+  .nav-links a{ opacity:0.75; transition:opacity .2s; }
+  .nav-links a:hover{ opacity:1; }
+  .header-right{ display:flex; align-items:center; gap:18px; }
+  .header-social{ display:flex; gap:12px; }
+  .header-social a{
+    color:var(--paper); opacity:1; background:var(--emerald);
+    display:flex; align-items:center; justify-content:center;
+    width:40px; height:40px; border-radius:50%;
+    border:1px solid var(--emerald);
+    transition:background .2s, transform .18s, box-shadow .2s;
+    box-shadow:0 3px 10px rgba(26,54,38,0.18);
+  }
+  .header-social a:hover{ background:var(--gold-deep); border-color:var(--gold-deep); transform:translateY(-2px); box-shadow:0 6px 16px rgba(169,132,63,0.32); }
+  @media (max-width:780px){ .nav-links{ display:none; } }
+  @media (max-width:480px){ .header-social{ display:none; } }
+
+  /* Hero */
+  .hero{ padding:88px 0 76px; }
+  .hero-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center; }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+  .hero h1{
+    font-size:clamp(2.2rem, 4.2vw, 3.3rem);
+    line-height:1.14;
+    letter-spacing:-0.005em;
+    margin-bottom:22px;
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold-deep); }
+  .hero p.lede{ font-size:1.08rem; color:var(--ink-soft); max-width:46ch; margin-bottom:34px; }
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 26px; border-radius:2px;
+    font-weight:700; font-size:0.92rem; letter-spacing:0.01em;
+    transition:transform .18s ease, background .18s ease;
+  }
+  .btn-primary{ background:var(--emerald); color:var(--paper); }
+  .btn-primary:hover{ background:var(--gold-deep); transform:translateY(-1px); }
+  .btn-ghost{ border:1px solid var(--line); color:var(--emerald); }
+  .btn-ghost:hover{ border-color:var(--emerald); }
+
+  .hero-photo{
+    position:relative; border-radius:2px; overflow:hidden;
+    box-shadow:0 24px 60px rgba(26,54,38,0.22);
+    border:1px solid var(--line);
+    max-width:280px; margin:0 auto;
+  }
+  .hero-photo img{ width:100%; display:block; }
+  .hero-photo .badge{
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(0deg, rgba(26,54,38,0.92), transparent);
+    padding:22px 20px 16px;
+    color:var(--paper);
+    font-size:0.78rem; letter-spacing:0.04em;
+  }
+
+  section{ padding:80px 0; scroll-margin-top:88px; }
+  .section-head{ max-width:58ch; margin-bottom:48px; }
+  .section-head h2{ font-size:clamp(1.7rem, 2.8vw, 2.2rem); }
+  .section-head p{ color:var(--ink-soft); margin-top:12px; font-size:1.02rem; }
+
+  /* Areas */
+  .areas{ background:var(--emerald); }
+  .areas .eyebrow{ color:var(--gold); }
+  .areas .section-head h2, .areas .section-head p{ color:var(--paper); }
+  .areas .section-head p{ color:rgba(244,241,234,0.72); }
+  .areas-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(244,241,234,0.14); border:1px solid rgba(244,241,234,0.14); }
+  @media (max-width:900px){ .areas-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .areas-grid{ grid-template-columns:1fr; } }
+  .area-card{ background:var(--emerald-soft); padding:34px 26px; }
+  .area-card .num{ font-family:'Montserrat', sans-serif; font-weight:700; font-size:0.76rem; color:var(--gold); margin-bottom:16px; display:block; letter-spacing:0.06em; }
+  .area-card h3{ color:var(--paper); font-size:1.15rem; margin-bottom:10px; }
+  .area-card p{ color:rgba(244,241,234,0.72); font-size:0.92rem; }
+  .urgency-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    margin-top:16px; padding:9px 16px;
+    background:var(--ruby); color:#fff;
+    font-size:0.8rem; font-weight:700; letter-spacing:0.01em;
+    border-radius:2px; transition:background .2s, transform .18s;
+  }
+  .urgency-btn:hover{ background:var(--ruby-deep); transform:translateY(-1px); }
+  .urgency-btn::before{ content:"●"; font-size:0.6rem; color:#fff; animation:pulse 1.6s infinite; }
+  @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:0.35; } }
+
+  /* Process */
+  .process-list{ display:flex; flex-direction:column; }
+  .process-item{ display:grid; grid-template-columns:64px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--line); }
+  .process-item:last-child{ border-bottom:1px solid var(--line); }
+  .process-item .step{ font-family:'Playfair Display', serif; font-size:1.5rem; color:var(--gold-deep); font-weight:600; }
+  .process-item h3{ font-size:1.1rem; margin-bottom:6px; }
+  .process-item p{ color:var(--ink-soft); max-width:52ch; }
+
+  /* About */
+  .about-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:52px; align-items:center; }
+  @media (max-width:860px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-photo{ border-radius:3px; overflow:hidden; border:1px solid var(--line); box-shadow:0 18px 40px rgba(26,54,38,0.14); max-width:240px; margin:0 auto; }
+  .about-photo img{ width:100%; display:block; }
+  .about p.bio{ font-size:1.02rem; color:var(--ink-soft); margin-bottom:16px; }
+  .credentials{ list-style:none; margin-top:22px; }
+  .credentials li{ display:flex; justify-content:space-between; padding:13px 0; border-top:1px solid var(--line); font-size:0.92rem; }
+  .credentials li:last-child{ border-bottom:1px solid var(--line); }
+  .credentials span:first-child{ color:var(--ink-soft); font-weight:600; }
+
+  /* Contact */
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:44px; }
+  @media (max-width:800px){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-card{ background:#fff; border:1px solid var(--line); border-radius:3px; padding:34px; }
+  .contact-card h3{ font-size:1.1rem; margin-bottom:18px; }
+  .contact-line{ display:flex; gap:14px; padding:12px 0; border-top:1px solid var(--line); font-size:0.94rem; }
+  .contact-line:first-of-type{ border-top:none; }
+  .contact-line .label{ font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.7rem; color:var(--gold-deep); min-width:88px; text-transform:uppercase; letter-spacing:0.05em; padding-top:2px; }
+
+  .float-wpp{
+    position:fixed; bottom:24px; right:24px; z-index:60;
+    background:var(--emerald); color:var(--paper);
+    padding:14px 20px; border-radius:30px;
+    display:flex; align-items:center; gap:10px;
+    font-weight:700; font-size:0.88rem;
+    box-shadow:0 10px 26px rgba(26,54,38,0.32);
+    transition:transform .2s ease, background .2s ease;
+  }
+  .float-wpp:hover{ background:var(--gold-deep); transform:translateY(-2px); }
+
+  footer{ background:var(--wood); color:rgba(244,241,234,0.78); padding:28px 0; }
+  .footer-bottom{ padding-top:4px; font-size:0.8rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  .footer-credit{ margin-top:14px; font-size:0.72rem; color:rgba(244,241,234,0.45); }
+  .credit-link{ color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(197,160,89,0.35); transition:color .2s, border-color .2s; }
+  .credit-link:hover{ color:var(--paper); border-color:var(--paper); }
+
+  :focus-visible{ outline:2px solid var(--gold-deep); outline-offset:2px; }
+
+  /* Mobile-first refinements */
+  @media (max-width:600px){
+    .wrap{ padding:0 20px; }
+    .nav{ padding:12px 20px; }
+    .brand img{ width:36px; height:36px; }
+    .brand-text{ font-size:0.88rem; }
+    .hero{ padding:36px 0 48px; }
+    .hero-grid{ gap:32px; }
+    .hero p.lede{ font-size:1rem; }
+    .cta-row{ flex-direction:column; }
+    .cta-row .btn{ width:100%; justify-content:center; }
+    section{ padding:52px 0; }
+    .section-head{ margin-bottom:32px; }
+    .areas-grid{ border-left:none; border-right:none; }
+    .area-card{ padding:28px 22px; }
+    .process-item{ grid-template-columns:44px 1fr; gap:16px; padding:20px 0; }
+    .process-item .step{ font-size:1.2rem; }
+    .about-grid{ gap:28px; }
+    .contact-grid{ gap:24px; }
+    .contact-card{ padding:26px 22px; }
+    .footer-bottom{ flex-direction:column; align-items:flex-start; }
+    .float-wpp{
+      left:16px; right:16px; bottom:calc(16px + env(safe-area-inset-bottom));
+      justify-content:center; width:auto;
+    }
+    .btn{ min-height:44px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="assets/logo-monogram-v2.png" alt="Monograma VMC">
+      <div class="brand-text">Vagner Miranda Correia<small>ADVOCACIA · OAB/PR 80.678</small></div>
+    </div>
+    <nav class="nav-links">
+      <a href="#areas">Áreas de atuação</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header-right">
+      <div class="header-social">
+        <a href="#" aria-label="Instagram" title="Instagram (adicionar link)">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" title="Facebook (adicionar link)">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 8.5h2.5V5H14c-2.2 0-4 1.8-4 4v2H8v3.5h2V21h3.5v-6.5H16l.5-3.5h-3V9c0-.6.4-1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" aria-label="Telegram" title="Telegram (adicionar link)">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 3 11.2l6 2.1M21 4l-3.2 16-6.8-5M21 4 9 14.3v5.4l2.9-2.7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Solidez e <em>proximidade</em> na defesa dos seus direitos.</h1>
+      <p class="lede">Atuação ética e estratégica em Direito de Família, Trabalhista, Civil e Penal. Atendimento consultivo e contencioso, com atenção individual a cada caso.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://wa.me/5545988126159" target="_blank" rel="noopener">Conversar no WhatsApp</a>
+        <a class="btn btn-ghost" href="#areas">Ver áreas de atuação</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/foto-vagner-real-v2.jpg" alt="Dr. Vagner Miranda Correia">
+      <div class="badge">Dr. Vagner Miranda Correia — OAB/PR 80.678</div>
+    </div>
+  </div>
+</section>
+
+<section class="areas" id="areas">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Áreas de atuação</span>
+      <h2>Onde posso ajudar você</h2>
+      <p>Análise minuciosa e atuação combativa, seja na prevenção de litígios ou na defesa em processos judiciais.</p>
+    </div>
+  </div>
+  <div class="areas-grid">
+    <div class="area-card">
+      <span class="num">01</span>
+      <h3>Direito de Família</h3>
+      <p>Divórcio, guarda de filhos, pensão alimentícia e partilha de bens, conduzidos com cuidado nos momentos mais sensíveis.</p>
+    </div>
+    <div class="area-card">
+      <span class="num">02</span>
+      <h3>Direito Trabalhista</h3>
+      <p>Verbas rescisórias, demissões irregulares, horas extras e questões contratuais entre empregado e empregador.</p>
+    </div>
+    <div class="area-card">
+      <span class="num">03</span>
+      <h3>Direito Civil</h3>
+      <p>Contratos, cobranças, indenizações e disputas patrimoniais, com foco em resolução clara e objetiva.</p>
+    </div>
+    <div class="area-card">
+      <span class="num">04</span>
+      <h3>Direito Penal</h3>
+      <p>Defesa técnica em inquéritos e processos criminais, com acompanhamento atento em todas as fases.</p>
+      <a class="urgency-btn" href="https://wa.me/5545988126159?text=Preciso%20de%20ajuda%20urgente" target="_blank" rel="noopener">Preciso de ajuda agora</a>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Três passos, sem enrolação</h2>
+    </div>
+    <div class="process-list">
+      <div class="process-item">
+        <span class="step">01</span>
+        <div>
+          <h3>Você entra em contato</h3>
+          <p>Pelo WhatsApp ou telefone — conte brevemente o que está acontecendo.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <span class="step">02</span>
+        <div>
+          <h3>Conversamos sobre o seu caso</h3>
+          <p>Uma primeira consulta com calma e clareza, para entender a situação a fundo.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <span class="step">03</span>
+        <div>
+          <h3>Definimos o caminho</h3>
+          <p>Você recebe uma orientação honesta sobre as opções reais e os próximos passos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Sobre</span>
+      <h2>Dr. Vagner Miranda Correia</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="assets/foto-vagner-real-v2.jpg" alt="Dr. Vagner Miranda Correia">
+      </div>
+      <div class="about">
+        <p class="bio">Com uma atuação pautada pela ética, transparência e busca incessante pelos melhores resultados, o escritório Vagner Miranda Correia Advocacia dedica-se a oferecer soluções jurídicas sólidas e estratégicas.</p>
+        <p class="bio">O compromisso é ir além do tradicional, prestando um atendimento verdadeiramente personalizado — compreendendo que cada cliente e cada demanda são únicos, seja na esfera consultiva ou contenciosa.</p>
+        <ul class="credentials">
+          <li><span>OAB</span><span>PR 80.678</span></li>
+          <li><span>Situação</span><span>Ativo</span></li>
+          <li><span>Subseção</span><span>Toledo — PR</span></li>
+          <li><span>Inscrição</span><span>31/03/2016</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Contato</span>
+      <h2>Vamos conversar</h2>
+      <p>Escolha o canal que preferir — respondo com atenção a cada mensagem.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Fale diretamente</h3>
+        <div class="contact-line"><span class="label">WhatsApp</span><span>(45) 98812-6159</span></div>
+        <div class="contact-line"><span class="label">Telefone</span><span>(45) 3379-3638</span></div>
+        <div class="contact-line"><span class="label">E-mail</span><span>contato@advvmc.com.br</span></div>
+        <div class="contact-line"><span class="label">Endereço</span><span>Rua Gustavo Barroso, 1381 — Jardim Panorama, Toledo/PR</span></div>
+      </div>
+      <div class="contact-card">
+        <h3>Horário de atendimento</h3>
+        <div class="contact-line"><span class="label">Seg – Sex</span><span>09h às 18h</span></div>
+        <div class="contact-line"><span class="label">Sábado</span><span>Sob agendamento</span></div>
+        <div class="contact-line"><span class="label">Online</span><span>Consultas por vídeo disponíveis</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 Vagner Miranda Correia — Advocacia. Todos os direitos reservados.</span>
+      <span>OAB/PR 80.678</span>
+    </div>
+    <div class="footer-credit">Construído com o apoio de <a href="https://claude.ai" target="_blank" rel="noopener" class="credit-link">Claude (Anthropic)</a></div>
+  </div>
+</footer>
+
+<a class="float-wpp" href="https://wa.me/5545988126159" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.2 15.9L2 21l5.24-1.16A8.86 8.86 0 0 0 21 12.14a8.8 8.8 0 0 0-3.4-5.82Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  WhatsApp
+</a>
+
+</body>
+</html>
